@@ -1,0 +1,236 @@
+.photo-card
+   margin: 0px
+   border: 0px
+   border-radius: 0px
+   background: #212225
+   position: relative
+
+.education-card
+   margin: 0px
+   border: 0px
+   border-radius: 0px
+   background: #1a1b1c
+   padding: 1em
+
+.expertise-card
+   margin: 0px
+   border: 0px
+   border-radius: 0px
+   background: #ebebeb
+   padding: 1em
+
+   .card-title
+      color: #1a1b1c
+
+.about-card
+   margin: 0px
+   background: #ebebeb
+   border: none
+   border-radius: 0px
+   padding: 3em 3em
+
+.card-title
+   font-family: 'Raleway', sans-serif
+   color: #ffffff
+   position: relative
+   font-weight: 700
+
+   &::after
+      content: ""
+      width: 40px
+      height: 5px
+      background: #ffca05
+      position: absolute
+      bottom: -10px
+      left: 0px
+
+
+.white-card
+   margin: 0px
+   background: #fff
+   border: none
+   border-radius: 0px
+   padding: 3em 3em
+
+.content-card-title
+   font-family: "Raleway", sans-serif
+   color: #22222d
+   position: relative
+   font-weight: 800
+   font-size: 18px
+   margin-bottom: 25px
+
+   &::after
+      content: ""
+      width: 40px
+      height: 5px
+      background: #ffca05
+      position: absolute
+      bottom: -10px
+      left: 0px
+
+ul.contact-information 
+   padding: 0px
+   list-style-type: none
+   margin: 0px
+   position: relative
+
+   &::before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 60px
+      background: #ffca05
+      left: 0px
+      top: 0px
+
+   li
+      position: relative
+      display: inline-flex
+      align-items: center
+      justify-content: space-around
+      height: 51px
+      width: 100%
+      float: left
+
+      .iconbox
+         float: left
+         width: 60px
+         height: 100%
+         background: #ffca05
+         display: inline-flex
+         align-items: center
+         justify-content: center
+
+      .contactinfo
+         float: left
+         width: 100%
+         height: 100%
+         padding-left: 4%
+         display: inline-flex
+         flex-direction: column
+         justify-content: center
+
+         p
+            margin: 0px
+            line-height: 19px
+            font-size: 14px
+
+         .contact-title
+            font-family: 'Open Sans', sans-serif
+            color: #1a1b1c
+            font-weight: 600
+            font-size: 15px
+
+ul.expertise-list
+   width: 100%
+   list-style-type: none
+   margin: 0px
+   padding: 20px 0px
+
+   li
+      width: 100%
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      margin-bottom: 5px
+
+
+      .expertise-title
+         font-family: 'Open Sans', sans-serif
+         width: 50%
+         float: left
+         font-weight: 600
+         font-size: 15px
+
+      .expertise-proggress
+         width: 50%
+         float: left
+
+         .progress
+            height: 5px
+            background: #dfdfdf
+
+            .progress-bar
+               height: 5px
+               background: #ffca05
+
+.content-about-box 
+   width: 100%
+   margin: 0px
+   padding: 0px
+   font-size: 13px
+   color: #555555
+   font-family: "Montserrat", sans-serif
+   font-weight: 500
+   line-height: 24px
+
+.name-surname-box
+   font-size: 80px
+   font-family: "Raleway", sans-serif
+   font-weight: 700
+
+   span
+      font-weight: 300
+
+ul.jobs-list 
+   width: 100%
+   list-style-type: none
+   margin: 20px 0px 0px
+   padding: 0px
+
+   li 
+      font-family: 'Open Sans', sans-serif
+      width: 100%
+      margin-bottom: 10px
+
+      .position
+         font-size: 19px
+         color: #1a1b1c
+         font-weight: 600
+         width: 100%
+
+
+      .information
+         width: 100%
+         display: inline-flex
+         align-items: center
+         font-size: 14px
+         font-weight: 600
+         
+         .status
+            background: #ffca05
+            float: left
+            border-radius: 3px
+            font-size: 13px
+            font-weight: 700
+            box-sizing: border-box
+            padding: 2px 7px
+            margin: 0px 5px 0px 0px
+      
+      .description
+         font-size: 13px
+         padding: 5px 0px
+         font-weight: 500
+
+.print-button
+   color: #000
+
+   &:hover
+      color: #ffca05
+
+.print-only
+  display: block
+
+  @media print
+    display: none
+
+@media print
+
+   .col-lg-3
+      width: 30%
+      float: left
+      border-right: 1px solid #000
+   
+   .col-lg-9
+      width: 70%
