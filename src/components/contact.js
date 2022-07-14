@@ -1,18 +1,27 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment , faEnvelope , faLocationArrow } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Contact = () =>  {
 
-   const contact = [
-      { icon : faComment , title : 'Whatsapp' , value : '0 850 303 25 81'},
-      { icon : faEnvelope , title : 'E-Posta' , value : 'kblycay@gmail.com'},
-      { icon : faLocationArrow , title : 'Şehir' , value : 'İstanbul'},
-   ];
+   const [ Contact , SetContact ] = useState([]);
 
-   const ContactListItem = contact.map((contact,key) => 
+   useEffect(() => {
+
+      axios.get('https://raw.githubusercontent.com/kblycay/kblycay.github.io/main/data/contact.json').then(response => {
+         SetContact(response.data)
+      });
+
+   });
+
+   // https://raw.githubusercontent.com/kblycay/kblycay.github.io/main/data/contact.json
+   // Contact json okunacak ve veriler bu alana yazılacak.
+
+   const ContactListItem = Contact.map((contact,key) => 
          <li key={key}>
-            <div className="iconbox"><FontAwesomeIcon icon={contact.icon} /></div>
+            <div className="iconbox">{contact.icon}</div>
             <div className="contactinfo">
             <p className="contact-title">{ contact.title }</p>
             <p>{ contact.value }</p>
