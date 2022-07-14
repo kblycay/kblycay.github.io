@@ -1,0 +1,5 @@
+[
+   { "icon" : "faComment" ,         "title" : "Whatsapp" ,     "value" : "0 850 303 25 81"},
+   { "icon" : "faEnvelope",         "title" : "E-Posta" ,      "value" : "kblycay@gmail.com"},
+   { "icon" : "faLocationArrow" ,   "title" : "Şehir" ,        "value" : "İstanbul"}
+]

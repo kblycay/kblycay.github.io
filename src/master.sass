@@ -5,6 +5,14 @@
    background: #212225
    position: relative
 
+   .card-body
+      margin: 0px
+      padding: 0px
+      overflow: hidden
+      display: inline-flex
+      align-items: center
+      justify-content: center
+
 .education-card
    margin: 0px
    border: 0px
@@ -155,6 +163,51 @@ ul.expertise-list
                height: 5px
                background: #ffca05
 
+ul.github-repos
+   width: 100%
+   list-style-type: none
+   margin: 0px
+   padding: 0px
+   display: inline-flex
+   flex-direction: initial
+   flex-wrap: wrap
+   
+   li
+      width: 49%
+      border: 1px solid #d1d1d1
+      border-radius: 5px
+      margin-right: 1%
+      margin-bottom: 1%
+      padding: 1%
+      position: relative
+
+      &:nth-child(2n+2)
+         margin-right: 0px
+         
+      .repo-name
+         font-family: "Montserrat", sans-serif
+         font-size: 14px
+         font-weight: 500
+
+         a
+            color: #000
+            text-decoration: none
+
+            &:hover
+               text-decoration: underline
+
+      .repo-visibility
+         position: absolute
+         background: #d1d1d1
+         border-radius: 100px
+         box-sizing: border-box
+         padding: 2px 17px
+         font-size: 13px
+         font-family: 'Montserrat'
+         font-weight: 600
+         right: 8px
+         top: -12px
+
 .content-about-box 
    width: 100%
    margin: 0px
@@ -213,8 +266,28 @@ ul.jobs-list
          padding: 5px 0px
          font-weight: 500
 
+ul.education-list
+   width: 100%
+   height: auto
+   list-style-type: none
+
+   li 
+
+
+.language-button
+   float: right
+   margin-left: 10px
+   text-decoration: none
+   font-weight: 700
+   font-family: "Raleway", sans-serif
+   color: #000
+
+   &:hover
+      color: #ffca05
+
 .print-button
    color: #000
+   float: left
 
    &:hover
       color: #ffca05

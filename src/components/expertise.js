@@ -18,8 +18,8 @@ const Expertise = () => {
          <li key={ key }>
             <div className="expertise-title">{ expert.title }</div>
             <div className="expertise-proggress">
-               <div class="progress">
-                  <div class="progress-bar" role="progressbar" style={{width: expert.width}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+               <div className="progress">
+                  <div className="progress-bar" role="progressbar" style={{width: expert.width}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                </div>
             </div>
          </li>

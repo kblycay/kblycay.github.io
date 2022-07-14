@@ -3,17 +3,36 @@ import './master.sass';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPrint } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Expertise from './components/expertise';
 import Contact from './components/contact';
 import Jobs from './components/jobs';
+import Repos from './components/repos'
 
 
-function App() {
+const App = () => {
+
+  const [User , SetUser] = useState([]);
+
+  useEffect(() => {
+
+      if(User.length == 0){
+
+        axios.get('https://api.github.com/users/kblycay').then(response => {
+          SetUser(response.data);
+        });
+
+      }
+
+  });
 
   const print = () => {
       window.print();
   }
+
+  console.log(User);
 
   return (
     <div className='container'>
@@ -23,12 +42,7 @@ function App() {
         <div className="col-lg-3 p-0">
             <div className="card photo-card">
               <div className="card-body">
-
-              </div>
-            </div>
-            <div className="card education-card">
-              <div className="card-body">
-                  <div className="card-title">EĞİTİM</div>
+                  <img src={User.avatar_url} alt="" />
               </div>
             </div>
             <div className="card expertise-card">
@@ -49,14 +63,16 @@ function App() {
               <div className="col-lg-12">
 
                 <div className="card about-card">
+                  <div className="card-body print-only">
+                    <a href="" className="print-button" onClick={print}><FontAwesomeIcon icon={faPrint} /></a>
+                    <a href="" className="language-button ">TR</a>
+                    <a href="" className="language-button">EN</a>
+                  </div>
                   <div className="card-body">
                     
-                    <a href="" class="print-button print-only" onClick={print}><FontAwesomeIcon icon={faPrint} /></a>
-                    <p class="name-surname-box">KUBİLAY <span>ÇAY</span></p>
+                    <p className="name-surname-box">{ User.name ? User.name.split(' ')[0].toUpperCase() : '' } <span>{ User.name ? User.name.split(' ')[1].toUpperCase() : '' }</span></p>
                     <div className="content-card-title">HAKKIMDA</div>
-                    <p class="content-about-box">
-                      Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.
-                    </p>
+                    <p className="content-about-box">{ User.bio }</p>
                   </div>
                 </div>
 
@@ -72,6 +88,15 @@ function App() {
                 <div className="card white-card">
                   <div className="card-body">
                     <div className="content-card-title">REFERANSLARIM</div>
+                  </div>
+                </div>
+
+                <div className="card white-card">
+                  <div className="card-body">
+                    <div className="content-card-title">GİTHUB REPO</div>
+
+                    <Repos />
+
                   </div>
                 </div>
 
