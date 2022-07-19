@@ -1,0 +1,5 @@
+[
+   { "uri" : "http://www.bigatso.tobb.org.tr/" , "title" : "Biga Ticaret Odası" , "tech" : ["PHP","LARAVEL","HTML","CSS","JQUERY","MYSQL"] , "description" : ""},
+   { "uri" : "http://www.u4rp.com/" , "title" : "U4RP" , "tech" : ["PHP","LARAVEL","HTML","CSS","JQUERY","MYSQL"] , "description" : ""},
+   { "uri" : "http://www.makaleuzmani.com/" , "title" : "Makale Uzmanı" , "tech" : ["PHP","HTML","CSS","JQUERY","MYSQL"] , "description" : ""}
+]

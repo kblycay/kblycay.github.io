@@ -1,0 +1,6 @@
+[
+   { "icon" : "guitar" ,         "title" : "Gitar"},
+   { "icon" : "car",         "title" : "Araba"},
+   { "icon" : "gamepad" ,  "title" : "Oyun"},
+   { "icon" : "motorcycle" ,  "title" : "Motorsiklet"}
+]

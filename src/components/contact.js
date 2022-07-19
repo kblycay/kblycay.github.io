@@ -1,27 +1,21 @@
-
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment , faEnvelope , faLocationArrow } from '@fortawesome/free-solid-svg-icons'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import ContactJson from './../data/contact.json'
 
 const Contact = () =>  {
 
-   const [ Contact , SetContact ] = useState([]);
+   library.add(faComment , faEnvelope , faLocationArrow);
 
-   useEffect(() => {
+   // axios.get('https://raw.githubusercontent.com/kblycay/kblycay.github.io/main/data/contact.json').then(response => {
+   //       console.log(response.data);
+   // });
 
-      axios.get('https://raw.githubusercontent.com/kblycay/kblycay.github.io/main/data/contact.json').then(response => {
-         SetContact(response.data)
-      });
-
-   });
-
-   // https://raw.githubusercontent.com/kblycay/kblycay.github.io/main/data/contact.json
-   // Contact json okunacak ve veriler bu alana yazılacak.
-
-   const ContactListItem = Contact.map((contact,key) => 
+   const ContactListItem = ContactJson.map((contact,key) => 
          <li key={key}>
-            <div className="iconbox">{contact.icon}</div>
+            <div className="iconbox"><FontAwesomeIcon icon={ contact.icon } /></div>
             <div className="contactinfo">
             <p className="contact-title">{ contact.title }</p>
             <p>{ contact.value }</p>

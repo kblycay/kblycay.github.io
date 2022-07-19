@@ -1,5 +1,0 @@
-[
-   { "icon" : "<FontAwesomeIcon icon={faComment} />" ,         "title" : "Whatsapp" ,     "value" : "0 850 303 25 81"},
-   { "icon" : "<FontAwesomeIcon icon={faEnvelope} />",         "title" : "E-Posta" ,      "value" : "kblycay@gmail.com"},
-   { "icon" : "<FontAwesomeIcon icon={faLocationArrow} />" ,   "title" : "Şehir" ,        "value" : "İstanbul"}
-]

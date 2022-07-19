@@ -10,11 +10,16 @@ import Expertise from './components/expertise';
 import Contact from './components/contact';
 import Jobs from './components/jobs';
 import Repos from './components/repos'
+import Hobbies from './components/hobbies'
+import References from './components/references'
 
 
 const App = () => {
 
   const [User , SetUser] = useState([]);
+  const [About , SetAbout ] = useState(false);
+
+  const regex = /(<([^>]+)>)/ig
 
   useEffect(() => {
 
@@ -24,6 +29,12 @@ const App = () => {
           SetUser(response.data);
         });
 
+      }
+
+      if(!About){
+        axios.get('https://raw.githubusercontent.com/kblycay/kblycay/main/README.md').then(response => {
+          SetAbout(response.data);
+        });
       }
 
   });
@@ -72,7 +83,7 @@ const App = () => {
                     
                     <p className="name-surname-box">{ User.name ? User.name.split(' ')[0].toUpperCase() : '' } <span>{ User.name ? User.name.split(' ')[1].toUpperCase() : '' }</span></p>
                     <div className="content-card-title">HAKKIMDA</div>
-                    <p className="content-about-box">{ User.bio }</p>
+                    <p className="content-about-box">{ About ? About.replace(regex, '') : '' }</p>
                   </div>
                 </div>
 
@@ -88,10 +99,13 @@ const App = () => {
                 <div className="card white-card">
                   <div className="card-body">
                     <div className="content-card-title">REFERANSLARIM</div>
+
+                    <References />
+
                   </div>
                 </div>
 
-                <div className="card white-card">
+                <div className="card white-card print-only">
                   <div className="card-body">
                     <div className="content-card-title">GİTHUB REPO</div>
 
@@ -103,6 +117,9 @@ const App = () => {
                 <div className="card white-card">
                   <div className="card-body">
                     <div className="content-card-title">HOBİLERİM</div>
+
+                    <Hobbies />
+
                   </div>
                 </div>
 
